@@ -11,6 +11,7 @@ common common-definitions
         , base ^>=4.16.4.0
         , directory
         , haskell-say ^>=1.0.0.0
+        , vector                         ^>=0.13.0.0
 
 executable app-exe 
     import:           common-definitions
