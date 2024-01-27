@@ -3,7 +3,6 @@ name:               kp-project
 version:            0.1.0.0
 author:             tsukaryu
 maintainer:         drgon8otsuka@gmail.com
-extra-source-files: CHANGELOG.md
 
 common common-definitions
     ghc-options: -Wall
