@@ -3,6 +3,7 @@ import Data.Vector.Unboxed qualified as U
 main :: IO ()
 main = do
   let x = digits10'U 12345
+  print $ length $ filter (== True) $ [True, False, True]
   print x
 
 digits10'U :: Int -> U.Vector Int
