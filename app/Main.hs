@@ -1,5 +1,3 @@
-module Main where
-
 import HaskellSay (haskellSay)
 
 main :: IO ()
