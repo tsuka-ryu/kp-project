@@ -1,6 +1,8 @@
 ## How to use
 
-- cabal run xxx-exe
+`kp-project.cabal` の `executable` に該当するディレクトリと Main.hs が追加されていることを確認してコマンドで実行
+
+`cabal run xxx-exe`
 
 ## ref
 
