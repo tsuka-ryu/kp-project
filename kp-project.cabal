@@ -45,7 +45,8 @@ executable kp-project
     -- other-extensions:
     build-depends:
         base ^>=4.16.4.0,
-        kp-project
+        kp-project,
+        haskell-say ^>=1.0.0.0
 
     hs-source-dirs:   app
     default-language: Haskell2010
