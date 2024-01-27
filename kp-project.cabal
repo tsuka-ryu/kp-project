@@ -3,6 +3,8 @@ name:               kp-project
 version:            0.1.0.0
 author:             tsukaryu
 maintainer:         drgon8otsuka@gmail.com
+license:            MIT
+license-file:       LICENSE
 
 common common-definitions
     ghc-options: -Wall
