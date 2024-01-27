@@ -1,4 +1,8 @@
 module MyLib (someFunc) where
 
+import System.Directory
+
 someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+someFunc = do
+  contents <- listDirectory "src"
+  print contents
