@@ -1,8 +1,8 @@
 ## How to use
 
-`kp-project.cabal` の `executable` に該当するディレクトリと Main.hs が追加されていることを確認してコマンドで実行
+`deno run -A setup.ts`でディレクトリ名を入力して、ファイル作成とcabalファイルの追記
 
-`cabal run xxx-exe`
+`cabal run [directoryName]`で実行
 
 ## ref
 
