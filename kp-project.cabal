@@ -30,3 +30,8 @@ executable a-exe
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   a
+
+executable toyboot-foldl
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   toyboot/foldl
