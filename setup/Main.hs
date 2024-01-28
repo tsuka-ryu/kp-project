@@ -1,14 +1,14 @@
 import Control.Exception (SomeException, catch)
 import HaskellSay (haskellSay)
-import System.Directory (createDirectory, doesFileExist, getCurrentDirectory)
-import System.Exit (exitFailure, exitSuccess)
+import System.Directory (createDirectory, doesFileExist)
+import System.Exit (exitFailure)
 import System.FilePath ((</>))
 import System.IO (hFlush, stdout)
 
--- Figletを使用するための関数
-figletConsole :: String -> IO ()
-figletConsole text = do
-  let message = text -- 本来はFigletの呼び出しを含むことになります
+-- haskellSayを使用するための関数
+haskellSayConsole :: String -> IO ()
+haskellSayConsole text = do
+  let message = text
   haskellSay message
 
 -- ユーザーからディレクトリ名を入力して取得
@@ -19,7 +19,7 @@ getDirectoryName = do
   input <- getLine
   if null input
     then do
-      figletConsole "Panic!"
+      haskellSayConsole "Panic!"
       exitFailure
     else return input
 
@@ -36,15 +36,13 @@ main = do
   let mainFileContent = "main :: IO ()\nmain = do\n  print \"template\"\n"
   writeFile (directoryName </> "Main.hs") mainFileContent
 
-  figletConsole "Good!"
-
   -- cabalファイルに追記
   catch (appendCabalFile directoryName) handleCabalFileError
 
 -- ディレクトリ名が不正な場合の例外ハンドラ
 handleInvalidInput :: SomeException -> IO a
 handleInvalidInput _ = do
-  figletConsole "Panic!"
+  haskellSayConsole "Panic!"
   exitFailure
 
 -- cabalファイルにディレクトリ名を追記
@@ -54,21 +52,20 @@ appendCabalFile directoryName = do
   fileExists <- doesFileExist filePath
 
   if not fileExists
-    then figletConsole "Oof!"
+    then haskellSayConsole "Oof!"
     else do
-      currentDir <- getCurrentDirectory
       let configFileContent =
             "\n\nexecutable "
               ++ directoryName
               ++ "\n    import:           common-definitions\n    main-is:          "
-              ++ directoryName </> "Main.hs\n    hs-source-dirs:   "
               ++ directoryName
-              ++ "\n"
+              </> "Main.hs\n    hs-source-dirs:   "
+              ++ directoryName
 
       -- ファイルに書き込み
       appendFile filePath configFileContent
-      figletConsole "Success!"
+      haskellSayConsole "Success!"
 
 -- cabalファイルの書き込みエラー時の例外ハンドラ
 handleCabalFileError :: SomeException -> IO ()
-handleCabalFileError _ = figletConsole "Oof!"
+handleCabalFileError _ = haskellSayConsole "Oof!"
