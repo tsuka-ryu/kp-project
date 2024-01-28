@@ -12,8 +12,14 @@ common common-definitions
     build-depends:
         , base ^>=4.16.4.0
         , directory
+        , filepath
         , haskell-say ^>=1.0.0.0
         , vector                         ^>=0.13.0.0
+
+executable setup
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   setup
 
 executable app-exe 
     import:           common-definitions
