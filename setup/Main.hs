@@ -1,6 +1,6 @@
 import Control.Exception (SomeException, catch)
 import HaskellSay (haskellSay)
-import System.Directory (createDirectory, doesFileExist)
+import System.Directory (createDirectoryIfMissing, doesFileExist)
 import System.Exit (exitFailure)
 import System.FilePath ((</>))
 import System.IO (hFlush, stdout)
@@ -29,8 +29,8 @@ main = do
   -- ディレクトリ名を取得
   directoryName <- catch getDirectoryName handleInvalidInput
 
-  -- ディレクトリを作成
-  createDirectory directoryName
+  -- ディレクトリを作成（親ディレクトリも含む）
+  createDirectoryIfMissing True directoryName
 
   -- ファイルを作成
   let mainFileContent = "main :: IO ()\nmain = do\n  print \"template\"\n"
@@ -50,16 +50,16 @@ appendCabalFile :: String -> IO ()
 appendCabalFile directoryName = do
   let filePath = "kp-project.cabal"
   fileExists <- doesFileExist filePath
+  let executableName = map replaceSlash directoryName
 
   if not fileExists
     then haskellSayConsole "Oof!"
     else do
       let configFileContent =
             "\n\nexecutable "
-              ++ directoryName
+              ++ executableName
               ++ "\n    import:           common-definitions\n    main-is:          "
-              ++ directoryName
-              </> "Main.hs\n    hs-source-dirs:   "
+              ++ "Main.hs\n    hs-source-dirs:   "
               ++ directoryName
 
       -- ファイルに書き込み
@@ -69,3 +69,8 @@ appendCabalFile directoryName = do
 -- cabalファイルの書き込みエラー時の例外ハンドラ
 handleCabalFileError :: SomeException -> IO ()
 handleCabalFileError _ = haskellSayConsole "Oof!"
+
+-- スラッシュをハイフンに置き換え
+replaceSlash :: Char -> Char
+replaceSlash '/' = '-'
+replaceSlash x = x
