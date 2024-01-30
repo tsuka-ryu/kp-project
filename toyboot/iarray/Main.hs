@@ -13,7 +13,6 @@ import Data.List.Extra (chunksOf)
 main :: IO ()
 main = do
   [h, w] <- ints
-  print $ [h, w]
   mat <- getMatInt h w
   -- 配列の添字範囲
   print $ bounds mat
