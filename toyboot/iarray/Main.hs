@@ -1,5 +1,3 @@
-
-
 import Control.Monad
 import Data.Array (Array)
 import Data.Array.IArray
@@ -25,3 +23,17 @@ getMatInt h w = listArray ((0, 0), (h - 1, w - 1)) . concat <$> replicateM h int
 
 -- IArrayの主なAPIは!演算子とaccumArray
 -- 多次元への1点アクセスと、畳み込み
+
+main :: IO ()
+main = do
+  [h, w] <- ints
+  print $ [h, w]
+  mat <- getMatInt h w
+  -- 配列の添字範囲
+  print $ bounds mat
+  -- 配列中の値の一覧（@listArray@への引数を表示）
+  print $ elems mat
+  -- 配列中の（添字、値）の一覧
+  print $ assocs mat
+  -- bounds およびassocsの組み合わせ
+  print mat
