@@ -58,3 +58,8 @@ executable toyboot-accum-array
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   toyboot/accum-array
+
+executable toyboot-m-array
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   toyboot/m-array
