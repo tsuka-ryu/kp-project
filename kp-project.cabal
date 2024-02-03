@@ -18,6 +18,7 @@ common common-definitions
         , filepath                       >=1.4.2.2     && <1.4.99
         , haskell-say                    ^>=1.0.0.0
         , vector                         ^>=0.13.0.0
+        , vector-algorithms              ^>=0.9.0.1
 
 executable setup
     import:           common-definitions
@@ -63,3 +64,8 @@ executable toyboot-m-array
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   toyboot/m-array
+
+executable toyboot-vector
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   toyboot/vector
