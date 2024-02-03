@@ -12,6 +12,9 @@ main = do
   let xs = VU.fromList [1 :: Int, 3, 2, 4]
   print $ VU.modify VAI.sort xs
   print $ VU.modify (VAI.sortBy (comparing Down)) xs
+  -- generate関数で書くこともできる
+  print $ [sum [5 * na + 7 * nb | nb <- [0 .. 14]] | na <- [0 .. 20]]
+  print $ VU.generate 21 $ \na -> VU.sum . VU.generate 15 $ \nb -> 5 * na + 7 * nb
   -- sotは遅い！
   print "template"
 
