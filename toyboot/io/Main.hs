@@ -1,6 +1,7 @@
 {-# LANGUAGE LambdaCase #-}
 
 import Control.Monad
+import Data.Array qualified as A
 import Data.Array.IArray
 import Data.Array.Unboxed (UArray)
 import Data.Bifunctor (first)
@@ -13,7 +14,7 @@ main :: IO ()
 main = do
   print "template"
   -- vector, arrayを空白区切りで出力するには一度リストに変換する
-  putStrLn $ unwords . map show . elems $ listArray (1, 3) [1 .. 3]
+  putStrLn $ unwords . map show . elems $ A.listArray (1, 3) [1 .. 3]
   -- unlinesを適用すると、改行区切りの文字列になる
   putStr $ unlines . map show $ [1 :: Int, 2, 3]
   -- forM_とか使っても良い
