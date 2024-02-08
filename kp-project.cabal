@@ -74,3 +74,8 @@ executable toyboot-io
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   toyboot/io
+
+executable abc152-b
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc152/b
