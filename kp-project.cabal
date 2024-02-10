@@ -84,3 +84,8 @@ executable abc082-b
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc082/b
+
+executable past-1-a
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   past/1/a
