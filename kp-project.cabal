@@ -99,3 +99,8 @@ executable abc075-b
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc075/b
+
+executable abc075-b-2
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc075/b-2
