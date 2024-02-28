@@ -114,3 +114,8 @@ executable abc105-b
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc105/b
+
+executable abc133-b
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc133/b
