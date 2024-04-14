@@ -149,3 +149,8 @@ executable abc049-b
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc049/b
+
+executable abc197-b
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc197/b
