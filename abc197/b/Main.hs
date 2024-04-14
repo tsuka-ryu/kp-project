@@ -15,8 +15,8 @@ getGrid h w = listArray ((1, 1), (h, w)) . concatMap BS.unpack <$> replicateM h 
 f :: UArray (Int, Int) Char -> Int -> Int -> Int -> Int -> Int
 f grid h w hx wy = sum [up, down, left, right, me]
   where
-    up = length . filter (/= '#') . takeWhile (/= '#') $ map (\idx -> grid ! idx) $ reverse [(i, wy) | i <- [1 .. hx], i /= hx]
-    down = length . filter (/= '#') . takeWhile (/= '#') $ map (\idx -> grid ! idx) [(i, wy) | i <- [hx .. h], i /= hx]
-    left = length . filter (/= '#') . takeWhile (/= '#') $ map (\idx -> grid ! idx) $ reverse [(hx, j) | j <- [1 .. wy], j /= wy]
-    right = length . filter (/= '#') . takeWhile (/= '#') $ map (\idx -> grid ! idx) [(hx, j) | j <- [wy .. w], j /= wy]
-    me = length . filter (/= '#') $ [grid ! (hx, wy)]
+    up = length . takeWhile (== '.') $ map (grid !) $ reverse [(i, wy) | i <- [1 .. hx], i /= hx]
+    down = length . takeWhile (== '.') $ map (grid !) [(i, wy) | i <- [hx .. h], i /= hx]
+    left = length . takeWhile (== '.') $ map (grid !) $ reverse [(hx, j) | j <- [1 .. wy], j /= wy]
+    right = length . takeWhile (== '.') $ map (grid !) [(hx, j) | j <- [wy .. w], j /= wy]
+    me = length . filter (== '.') $ [grid ! (hx, wy)]
