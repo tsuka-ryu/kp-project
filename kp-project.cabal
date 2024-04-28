@@ -164,3 +164,8 @@ executable past-4-c
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   past/4/c
+
+executable abc085-c
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc085/c
