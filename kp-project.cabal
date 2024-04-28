@@ -184,3 +184,8 @@ executable abc051-b
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc051/b
+
+executable tenkei-055
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   tenkei/055
