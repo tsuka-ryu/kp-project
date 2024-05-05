@@ -1,9 +1,11 @@
+{-# LANGUAGE BlockArguments #-}
 {-# LANGUAGE LambdaCase #-}
 
 import Control.Monad (replicateM)
 import Data.ByteString.Char8 qualified as BS
-import Data.Char (isSpace)
+import Data.Char (digitToInt, isSpace)
 import Data.List qualified as L
+import Debug.Trace (traceShow)
 
 ints :: IO [Int]
 ints = L.unfoldr (BS.readInt . BS.dropWhile isSpace) <$> BS.getLine
@@ -18,21 +20,19 @@ main :: IO ()
 main = do
   [n, m] <- ints
   sc <- replicateM m ints2
-  let xs = [(i, j, k) | i <- [0 :: Int .. 9], j <- [0 :: Int .. 9], k <- [0 :: Int .. 9]]
-  let ys = filter (check sc) xs
-  print sc
-  print $ take 10 xs
-  print $ take 10 ys
-  let ans = take 1 ys
-  putStrLn $ if null ans then "-1" else show' $ head ans
+  let xs = f n
+  let ys = filter (\x -> all (check x n) sc) xs
+  print ys
+  putStrLn $ if null ys then "-1" else show . head $ take 1 ys
 
-check :: [(Int, Int)] -> (Int, Int, Int) -> Bool
-check sc x = all (test x) sc
+check x n (s, c) = isValid && (digitToInt (str !! (s - 1)) == c)
   where
-    test (i, j, k) (s, c) = case s of
-      1 -> i == c
-      2 -> j == c
-      3 -> k == c
-      _ -> False
+    str = show x
+    isValid = s <= n
 
-show' (i, j, k) = show i ++ show j ++ show k
+f n =
+  case n of
+    1 -> [0 :: Int .. 9]
+    2 -> [10 .. 99]
+    3 -> [100 .. 999]
+    _ -> []
