@@ -194,3 +194,8 @@ executable tenkei-055-2
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   tenkei/055/2
+
+executable abc157-c
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc157/c
