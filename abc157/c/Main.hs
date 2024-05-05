@@ -22,7 +22,7 @@ main = do
   sc <- replicateM m ints2
   let xs = f n
   let ys = filter (\x -> all (check x n) sc) xs
-  print ys
+  -- print ys
   putStrLn $ if null ys then "-1" else show . head $ take 1 ys
 
 check x n (s, c) = isValid && (digitToInt (str !! (s - 1)) == c)
