@@ -235,3 +235,8 @@ executable abc137-c
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc137/c
+
+executable abc164-c
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc164/c
