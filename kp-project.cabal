@@ -255,3 +255,8 @@ executable abc081-c
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc081/c
+
+executable tenkei-027
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   tenkei/027
