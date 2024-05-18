@@ -275,3 +275,8 @@ executable abc082-c
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc082/c
+
+executable abc058-c
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc058/c
