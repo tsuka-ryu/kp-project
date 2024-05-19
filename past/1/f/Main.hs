@@ -1,4 +1,4 @@
-import Data.Char (isLower, toLower)
+import Data.Char (isAsciiLower, isLower, toLower)
 import Data.List qualified as L
 import Debug.Trace (traceShow)
 
@@ -29,9 +29,16 @@ solve = concat . L.sortOn (map toLower) . split
 -- split :: String -> [String]
 -- split xs = go xs
 --   where
---     go (c : cs) = 
+--     go (c : cs) =
 --       let (xs, remain) = span isLower cs in
 --       case remain of
 --         (y : ys) -> (c : xs ++ [y]) : go ys
 --         [] -> [c : xs]
 --     go [] = []
+
+camelSplit :: String -> [String]
+camelSplit [] = []
+camelSplit (s : ss) = ((s : lower) ++ [s']) : camelSplit ss'
+  where
+    (lower, remain) = span isAsciiLower ss
+    (s', ss') = (\(x : xs) -> (x, xs)) remain
