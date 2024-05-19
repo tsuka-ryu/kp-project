@@ -285,3 +285,8 @@ executable abc206-c
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc206/c
+
+executable tenkei-046
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   tenkei/046
