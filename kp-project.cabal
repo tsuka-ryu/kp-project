@@ -290,3 +290,8 @@ executable tenkei-046
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   tenkei/046
+
+executable past-1-f
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   past/1/f
