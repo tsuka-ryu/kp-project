@@ -280,3 +280,8 @@ executable abc058-c
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc058/c
+
+executable abc206-c
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc206/c
