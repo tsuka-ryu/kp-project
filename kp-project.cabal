@@ -295,3 +295,8 @@ executable past-1-f
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   past/1/f
+
+executable abc143-c
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc143/c
