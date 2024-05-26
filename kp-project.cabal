@@ -315,3 +315,8 @@ executable agc026-a
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   agc026/a
+
+executable abc116-c
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc116/c
