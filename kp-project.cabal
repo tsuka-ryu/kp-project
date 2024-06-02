@@ -340,3 +340,8 @@ executable abc136-d
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc136/d
+
+executable agc016-a
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   agc016/a
