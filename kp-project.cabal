@@ -330,3 +330,8 @@ executable agc013-a
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   agc013/a
+
+executable agc039-a
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   agc039/a
