@@ -345,3 +345,8 @@ executable agc016-a
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   agc016/a
+
+executable tenkei-084
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   tenkei/084
