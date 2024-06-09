@@ -350,3 +350,8 @@ executable tenkei-084
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   tenkei/084
+
+executable past-3-e
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   past/3/e
