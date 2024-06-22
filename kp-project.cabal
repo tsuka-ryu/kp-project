@@ -36,46 +36,6 @@ executable a-exe
     main-is:          Main.hs
     hs-source-dirs:   a
 
-executable toyboot-foldl
-    import:           common-definitions
-    main-is:          Main.hs
-    hs-source-dirs:   toyboot/foldl
-
-executable toyboot-map-accuml
-    import:           common-definitions
-    main-is:          Main.hs
-    hs-source-dirs:   toyboot/map-accuml
-
-executable toyboot-ix
-    import:           common-definitions
-    main-is:          Main.hs
-    hs-source-dirs:   toyboot/ix
-
-executable toyboot-iarray
-    import:           common-definitions
-    main-is:          Main.hs
-    hs-source-dirs:   toyboot/iarray
-
-executable toyboot-accum-array
-    import:           common-definitions
-    main-is:          Main.hs
-    hs-source-dirs:   toyboot/accum-array
-
-executable toyboot-m-array
-    import:           common-definitions
-    main-is:          Main.hs
-    hs-source-dirs:   toyboot/m-array
-
-executable toyboot-vector
-    import:           common-definitions
-    main-is:          Main.hs
-    hs-source-dirs:   toyboot/vector
-
-executable toyboot-io
-    import:           common-definitions
-    main-is:          Main.hs
-    hs-source-dirs:   toyboot/io
-
 executable abc152-b
     import:           common-definitions
     main-is:          Main.hs
@@ -380,13 +340,3 @@ executable tenkei-078
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   tenkei/078
-
-executable tatakau-01-input
-    import:           common-definitions
-    main-is:          Main.hs
-    hs-source-dirs:   tatakau/01/input
-
-executable tatakau-01-output
-    import:           common-definitions
-    main-is:          Main.hs
-    hs-source-dirs:   tatakau/01/output
