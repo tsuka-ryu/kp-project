@@ -380,3 +380,13 @@ executable tenkei-078
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   tenkei/078
+
+executable tatakau-01-input
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   tatakau/01/input
+
+executable tatakau-01-output
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   tatakau/01/output
