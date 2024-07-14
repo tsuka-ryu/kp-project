@@ -353,3 +353,8 @@ executable abc204-c
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc204/c
+
+executable abc075-c
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc075/c
