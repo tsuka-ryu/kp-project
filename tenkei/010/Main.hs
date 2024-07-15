@@ -1,6 +1,5 @@
 import Control.Monad (replicateM, replicateM_)
-import Data.Array.IArray (listArray, (!))
-import Data.Array.Unboxed (UArray)
+import Data.Array.Unboxed (UArray, listArray, (!))
 import Data.ByteString.Char8 qualified as BS
 import Data.Char (isSpace)
 import Data.List (unfoldr)
@@ -8,20 +7,19 @@ import Data.List (unfoldr)
 getInts :: IO [Int]
 getInts = unfoldr (BS.readInt . BS.dropWhile isSpace) <$> BS.getLine
 
+getTuple :: IO (Int, Int)
+getTuple = do
+  [a, b] <- getInts
+  return (a, b)
+
 main :: IO ()
 main = do
   [n] <- getInts
-  cp <- replicateM n getInts
+  cp <- replicateM n getTuple
   [q] <- getInts
-  let first = map (\[_, p] -> p) $ map (\[c, p] -> if c == 1 then [c, p] else [c, 0]) cp
-  -- print first
-  let f = listArray @UArray (1, n + 1) $ scanl (+) 0 first
-
-  let second = map (\[_, p] -> p) $ map (\[c, p] -> if c == 2 then [c, p] else [c, 0]) cp
-  -- print second
-  let s = listArray @UArray (1, n + 1) $ scanl (+) 0 second
-  -- print f
-  -- print s
+  let cp' = map (\(c, p) -> if c == 1 then (p, 0) else (0, p)) cp
+  let f = listArray @UArray (1, n + 1) $ scanl (+) 0 $ map fst cp'
+  let s = listArray @UArray (1, n + 1) $ scanl (+) 0 $ map snd cp'
 
   replicateM_ q $ do
     [l, r] <- getInts
