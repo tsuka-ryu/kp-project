@@ -363,3 +363,8 @@ executable tenkei-026
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   tenkei/026
+
+executable abc122-c
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc122/c
