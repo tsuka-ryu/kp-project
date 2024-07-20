@@ -373,3 +373,8 @@ executable tenkei-010
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   tenkei/010
+
+executable touitu-a
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   touitu/a
