@@ -378,3 +378,8 @@ executable touitu-a
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   touitu/a
+
+executable past-6-d
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   past/6/d
