@@ -24,6 +24,8 @@ main = do
   let isPrime = eratosthenes upperBound
       xs = map (\i -> if is2017like isPrime i then 1 :: Int else 0) [1 .. upperBound]
       ys = listArray @UArray (1, upperBound) $ scanl' (+) (0 :: Int) xs
+  -- print $ take 100 $ elems ys
+  -- print "template"
 
   replicateM_ q $ do
     [l, r] <- getInts
