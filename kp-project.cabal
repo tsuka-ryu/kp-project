@@ -403,3 +403,8 @@ executable agc023-a
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   agc023/a
+
+executable abc125-c
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc125/c
