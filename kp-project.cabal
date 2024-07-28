@@ -398,3 +398,8 @@ executable abc154-d
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc154/d
+
+executable agc023-a
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   agc023/a
