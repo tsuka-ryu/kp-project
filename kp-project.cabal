@@ -413,3 +413,8 @@ executable agc024-a
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   agc024/a
+
+executable abc065-b
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   abc065/b
