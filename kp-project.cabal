@@ -408,3 +408,8 @@ executable abc125-c
     import:           common-definitions
     main-is:          Main.hs
     hs-source-dirs:   abc125/c
+
+executable agc024-a
+    import:           common-definitions
+    main-is:          Main.hs
+    hs-source-dirs:   agc024/a
